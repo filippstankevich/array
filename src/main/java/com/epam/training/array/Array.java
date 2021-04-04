@@ -1,5 +1,7 @@
 package com.epam.training.array;
 
+import java.util.Arrays;
+
 //TODO: write a wrapper class for a java int array, make this class immutable
 public class Array {
   
@@ -20,21 +22,18 @@ public class Array {
   public boolean equals(Object object) {
     if (this == object) return true;
     if (object == null || getClass() != object.getClass()) return false;
-    //if (!super.equals(object)) return false;
     Array array = (Array) object;
-    return java.util.Arrays.equals(items, array.items);
+    return Arrays.equals(items, array.items);
   }
   @Override
   public int hashCode() {
-    //int result = super.hashCode();
-    int result = 31 * 5 + java.util.Arrays.hashCode(items);
-    return result;
-  }
+    int result = 31 * 5 + Arrays.hashCode(items);
+    return result;  }
 
   @Override
   public String toString() {
     return "Array{" +
-            "items=" + java.util.Arrays.toString(items) +
+            "items=" + Arrays.toString(items) +
             '}';
   }
 }
