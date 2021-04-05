@@ -1,8 +1,13 @@
 package com.epam.training.array;
 
+import java.util.Arrays;
+
 public class ArraySorter {
 
     public Array sort(Array array) {
-        throw new UnsupportedOperationException();
+        int[] sortedArray = array.getItems();
+        Arrays.sort(sortedArray);
+        return new Array(sortedArray);
     }
+
 }
