@@ -1,5 +1,5 @@
 package com.epam.training.array;
-
+/eee
 import java.util.Arrays;
 import java.util.Collection;
 
