@@ -5,28 +5,33 @@ import java.util.Collection;
 
 //TODO: write a wrapper class for a java int array, make this class immutable
 public class  Array {
-    private final Integer[] items;
+    private final int[] items; //why int and not Integer if its a wrapper class?
 
-  public Array(Integer[] items) {
+  public Array(int[] items) {
     this.items = items;
   }
-  public Integer[] getItems() {
-    return Arrays.copyOf(items, items.length);
+  public int[] getItems() {
+    return Arrays(items, items.length);
   }
-  public void setItems(Integer[] items) {
-   // this.items = items;
+  public void setItems(int[] items) {
+   // this.items = items; instead of using setters, make it immutable. leave it empty?
   }
   @Override
   public int hashCode() {
-    return super.hashCode();
+   // return super.hashCode();
   }
   @Override
   public boolean equals(Object obj) {
-    return super.equals(obj);
+    if(this == obj)
+      return true;
+    if(obj == null || obj.getClass()!= this.getClass())
+      return false;
+    Array array = (Array) obj;
+
   }
   @Override
   public String toString() {
-    return super.toString();
+   // return super.toString();
   }
 
 }
