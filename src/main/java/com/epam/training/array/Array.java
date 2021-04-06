@@ -18,7 +18,8 @@ public class  Array {
   }
   @Override
   public int hashCode() {
-   // return super.hashCode();
+    return Arrays.hashCode(items);
+    //returns a hash code based on the contents of the specified array
   }
   @Override
   public boolean equals(Object obj) {
@@ -27,7 +28,8 @@ public class  Array {
     if(obj == null || obj.getClass()!= this.getClass())
       return false;
     Array array = (Array) obj;
-
+  //redefines "equality" of objects. an object is equal to another object only if it is the same instance.
+    //But you can provide custom equality logic when you override it. Classes need to test for equality.
   }
   @Override
   public String toString() {
