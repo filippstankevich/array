@@ -1,5 +1,5 @@
 package com.epam.training.array;
-/eee
+
 import java.util.Arrays;
 import java.util.Collection;
 
@@ -13,6 +13,7 @@ public class  Array {
   public int[] getItems() {
     return Arrays(items, items.length);
   }
+
   public void setItems(int[] items) {
    // this.items = items; instead of using setters, make it immutable. leave it empty?
   }
@@ -27,6 +28,7 @@ public class  Array {
       return true;
     if(obj == null || obj.getClass()!= this.getClass())
       return false;
+    //whatever
     Array array = (Array) obj;
   //redefines "equality" of objects. an object is equal to another object only if it is the same instance.
     //But you can provide custom equality logic when you override it. Classes need to test for equality.
