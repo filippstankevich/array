@@ -31,33 +31,28 @@ public class ArrayLogicTest {
 
     }
     @Test
-    public void testFindPrimeNumbers(){
+    public void testFindPrimeNumbersMutability(){
         int[] ints = {3,5,6,2};
         Array array = new Array(ints);
         Array primeNumbers = ArrayLogic.findPrimeNumbers(array);
         int size = primeNumbers.getItems().length;
         assertEquals(size, 3);
 
+        //that operation should not change state of primeNumbers Object as it is Immutable
+        primeNumbers.getItems()[0]=4;
+
         int[] expected = {3,5,2};
         assertArrayEquals(primeNumbers.getItems(),expected);
     }
 
-    @Test
-    public void testSetItems(){
-        int[] ints = {3,5,6,2};
-        Array array = new Array(null);
-        array.setItems(ints);
-        int[] items = array.getItems();
-        assertArrayEquals(items,ints) ;
 
-    }
 
     @Test
     public void testToString(){
         Array array = new Array(null);
         assertEquals(array.toString(),"Array{items=null}");
         int[] ints = {3,5,6,2};
-        array.setItems(ints);
+        array = new Array(ints);
         assertEquals(array.toString(),"Array{items=[3, 5, 6, 2]}");
 
 

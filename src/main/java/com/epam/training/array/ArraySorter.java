@@ -9,8 +9,11 @@ public class ArraySorter {
         if (array.getItems() == null){
             return array;
         }
-        Arrays.sort(array.getItems());
-        Array result = new Array(array.getItems());
+
+        int[] arrayToSort= array.getItems();
+
+        Arrays.sort(arrayToSort);
+        Array result = new Array(arrayToSort);
         return result;
     }
 }
