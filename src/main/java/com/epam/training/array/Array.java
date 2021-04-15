@@ -1,7 +1,7 @@
 package com.epam.training.array;
 import java.util.Arrays;
 //TODO: write a wrapper class for a java int array, make this class immutable
-public class Array {
+public final class Array {
     public Array(int len) {
         items = new int[len];
     }

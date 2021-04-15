@@ -9,9 +9,9 @@ public class ArraySorterTest {
         int[] items = new int[]{1,3,2,4,5};
         Array array = new Array(items);
         int[] sortedItems = new int[]{1,2,3,4,5};
-        ArraySorter arraySorter = new ArraySorter();
-        Array sortedArray = arraySorter.sort(array);
-        Assert.assertArrayEquals(sortedItems, sortedArray.getItems());
+        int[] sortedArr = array.getItems();
+        ArraySorter.sort(sortedArr);
+        Assert.assertArrayEquals(sortedItems, sortedArr);
     }
 
     @Test
@@ -19,8 +19,16 @@ public class ArraySorterTest {
         int[] items = new int[]{-1,-3,-2,-4,-5};
         Array array = new Array(items);
         int[] sortedItems = new int[]{-5,-4,-3,-2,-1};
-        ArraySorter arraySorter = new ArraySorter();
-        Array sortedArray = arraySorter.sort(array);
-        Assert.assertArrayEquals(sortedItems, sortedArray.getItems());
+        int[] sortedArr = array.getItems();
+        ArraySorter.sort(sortedArr);
+        Assert.assertArrayEquals(sortedItems, sortedArr);
+    }
+    @Test
+    public void testSortArrShouldSortWhenPositiveNumbers(){
+        int[] items = new int[]{1,3,2,4,5};
+        Array array = new Array(items);
+        Array sortedArray = ArraySorter.sortArr(array);
+        int[] gt = new int[]{1,2,3,4,5};
+        Assert.assertArrayEquals(gt, sortedArray.getItems());
     }
 }

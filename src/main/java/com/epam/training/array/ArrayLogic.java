@@ -1,15 +1,34 @@
 package com.epam.training.array;
-import java.util.Arrays;
 
 public class ArrayLogic {
 
-    public boolean exists(Array array, int element) {
-        int res = Arrays.binarySearch(array.getItems(), element);
-        if (res >= 0) {
-            return true;
-        } 
-        return false;
+    public static int binarySearch(int[] array, int key){
+        int begin = 0;
+        int end = array.length;
+        while (true) {
+            int middle = (begin + end) / 2;
+            if (array[middle] == key) {
+                return middle;
+            }
+            if (array[middle] > key) {
+               end = middle;
+            }
+            if (array[middle] < key) {
+                begin = middle;
+            }
+            if (end == begin + 1){
+                if (array[end] == key) {
+                    return end;
+                } else if (array[begin] == key) {
+                    return begin;
+                } else {
+                    return -1;
+                }
+            }
+        }
     }
+
+
     private boolean isPrimeNumber(int num){
         if (num < 0) {
             num = -1 * num;

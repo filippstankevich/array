@@ -54,10 +54,9 @@ public class ArrayLogicTest {
     }
     @Test
     public void binariSearchTest() {
-        int[] items = new int[]{1,2,5,10};
+        int[] items = new int[]{1};
         Array array = new Array(items);
-        ArrayLogic arrayLogic = new ArrayLogic();
-        Assert.assertTrue(arrayLogic.exists(array, 5));
+        Assert.assertEquals(0, ArrayLogic.binarySearch(array.getItems(), 1));
     }
     @Test
     public void SearchMinTest(){
